@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLayoutChangeListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener {  
@@ -24,7 +25,16 @@ public class MainActivity extends Activity implements OnClickListener {
         startService = (Button) findViewById(R.id.start_service);  
         stopService = (Button) findViewById(R.id.stop_service);  
         startService.setOnClickListener(this);  
-        stopService.setOnClickListener(this);  
+        stopService.setOnClickListener(this); 
+        startService.addOnLayoutChangeListener(new OnLayoutChangeListener() {
+
+			@Override
+			public void onLayoutChange(View arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+					int arg8) {
+				
+			}
+
+		});
     }  
   
     @Override  

@@ -30,6 +30,10 @@ public class MainActivity extends Activity implements OnClickListener {
         switch (v.getId()) {  
         case R.id.start_service:  
             Intent startIntent = new Intent(this, MyService.class);
+            startIntent.putExtra("left", 200);  
+            startIntent.putExtra("top", 200);  
+            startIntent.putExtra("right", 600);
+            startIntent.putExtra("bottom", 600);
             startService(startIntent);
             break;  
         case R.id.stop_service:  
